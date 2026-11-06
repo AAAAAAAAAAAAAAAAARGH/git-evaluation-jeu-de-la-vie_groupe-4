@@ -18,8 +18,22 @@ def parse_args():
     -o/--output_directory, -t/--output_type, -p/--periodic (et -h/--help).
     Vérifier que nb_cells > 0 et max_iterations >= 0.
     """
-    # À compléter par Marc
-    pass
+    parser = argparse.ArgumentParser(description="Jeu de la vie de Conway")
+
+    parser.add_argument("-n", "--nb_cells", type=int, default=10,
+                        help="nombre de cellules par côté pour une grille aléatoire (défaut : 10)")
+    parser.add_argument("-m", "--max_iterations", type=int, default=20,
+                        help="numéro de la dernière itération à calculer (défaut : 20)")
+    parser.add_argument("-s", "--seed", type=int, default=42,
+                        help="graine du générateur aléatoire (défaut : 42)")
+    parser.add_argument("-o", "--output_directory", default="outputs",
+                        help="dossier dans lequel écrire les images (défaut : outputs)")
+    parser.add_argument("-t", "--output_type", choices=["image", "text"], default="image",
+                        help="type de sortie : image ou text (défaut : image)")
+    parser.add_argument("-p", "--periodic", action="store_true",
+                        help="active les conditions aux limites périodiques")
+
+    return parser.parse_args()
 
 
 def random_grid(nb_cells, seed):
