@@ -5,3 +5,6 @@ outputs/*
 !outputs/.keep
 
 # frozar_main.py
+# Vidéos et fichiers intermédiaires (ne pas versionner)
+*.mp4
+*.ppm
