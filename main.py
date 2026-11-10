@@ -42,8 +42,14 @@ def random_grid(nb_cells, seed):
     Utiliser random.Random(seed) pour que la grille soit toujours la même
     pour une même graine.
     """
-    # À compléter par Hugo
-    pass
+    rng = random.Random(seed)
+    grid = []
+    for i in range(nb_cells):
+        line = []
+        for j in range(nb_cells):
+            line.append(rng.choice([0, 1]))
+        grid.append(line)
+    return grid
 
 
 def read_grid(text):
