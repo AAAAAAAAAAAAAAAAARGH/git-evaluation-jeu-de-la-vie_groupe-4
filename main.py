@@ -83,8 +83,12 @@ def next_generation(grid, periodic):
 
 def write_text(grid, iteration):
     """Affiche sur STDOUT "iteration: N" puis les lignes de la grille."""
-    # À compléter par Yann
-    pass
+    print(f"iteration: {iteration}")
+    for line in grid:
+        values = []
+        for cell in line:
+            values.append(str(cell))
+        print(" ".join(values))
 
 
 def write_image(grid, iteration, output_directory):
