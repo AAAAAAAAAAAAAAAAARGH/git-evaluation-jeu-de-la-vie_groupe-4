@@ -66,15 +66,33 @@ def read_grid(text):
     Première ligne : la taille N. Puis N lignes de N cellules (0 ou 1)
     séparées par des espaces. En cas de problème, appeler error(...).
     """
+    if text.strip() == "":
+        error("la grille est vide")
+
     lines = text.strip().split("\n")
+
+    if not lines[0].strip().isdigit():
+        error("la première ligne doit contenir la taille de la grille (un entier positif)")
     size = int(lines[0])
+    if size <= 0:
+        error("la taille de la grille doit être strictement positive")
+
+    if len(lines) - 1 != size:
+        error(f"la grille doit contenir {size} lignes, {len(lines) - 1} trouvées")
+
     grid = []
     for i in range(1, size + 1):
+        values = lines[i].split()
+        if len(values) != size:
+            error(f"la ligne {i} doit contenir {size} cellules, {len(values)} trouvées")
         line = []
-        for value in lines[i].split():
+        for value in values:
+            if value != "0" and value != "1":
+                error(f"cellule invalide à la ligne {i} : {value} (0 ou 1 attendu)")
             line.append(int(value))
         grid.append(line)
     return grid
+
 
 
 def count_neighbors(grid, row, col, periodic):
