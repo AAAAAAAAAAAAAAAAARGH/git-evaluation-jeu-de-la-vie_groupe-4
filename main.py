@@ -84,7 +84,12 @@ def count_neighbors(grid, row, col, periodic):
                 continue
             r = row + dr
             c = col + dc
-            if r >= 0 and r < size and c >= 0 and c < size:
+            if periodic:
+                # on revient de l'autre côté de la grille
+                r = r % size
+                c = c % size
+                count = count + grid[r][c]
+            elif r >= 0 and r < size and c >= 0 and c < size:
                 count = count + grid[r][c]
     return count
 
