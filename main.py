@@ -99,8 +99,20 @@ def next_generation(grid, periodic):
 
     La grille reçue ne doit pas être modifiée.
     """
-    # À compléter par Amour
-    pass
+    size = len(grid)
+    new_grid = []
+    for row in range(size):
+        new_line = []
+        for col in range(size):
+            neighbors = count_neighbors(grid, row, col, periodic)
+            if grid[row][col] == 1 and (neighbors == 2 or neighbors == 3):
+                new_line.append(1)
+            elif grid[row][col] == 0 and neighbors == 3:
+                new_line.append(1)
+            else:
+                new_line.append(0)
+        new_grid.append(new_line)
+    return new_grid
 
 
 def write_text(grid, iteration):
