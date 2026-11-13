@@ -66,8 +66,15 @@ def read_grid(text):
     Première ligne : la taille N. Puis N lignes de N cellules (0 ou 1)
     séparées par des espaces. En cas de problème, appeler error(...).
     """
-    # À compléter par Morgan
-    pass
+    lines = text.strip().split("\n")
+    size = int(lines[0])
+    grid = []
+    for i in range(1, size + 1):
+        line = []
+        for value in lines[i].split():
+            line.append(int(value))
+        grid.append(line)
+    return grid
 
 
 def count_neighbors(grid, row, col, periodic):
