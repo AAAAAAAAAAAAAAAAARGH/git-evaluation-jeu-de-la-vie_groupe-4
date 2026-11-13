@@ -75,8 +75,17 @@ def count_neighbors(grid, row, col, periodic):
     Bords fixes : ce qui est hors de la grille est mort.
     Bords périodiques : on revient de l'autre côté (modulo la taille).
     """
-    # À compléter par Amour (bords fixes) et Hugo (bords périodiques)
-    pass
+    size = len(grid)
+    count = 0
+    for dr in [-1, 0, 1]:
+        for dc in [-1, 0, 1]:
+            if dr == 0 and dc == 0:
+                continue
+            r = row + dr
+            c = col + dc
+            if r >= 0 and r < size and c >= 0 and c < size:
+                count = count + grid[r][c]
+    return count
 
 
 def next_generation(grid, periodic):
