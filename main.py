@@ -1,6 +1,7 @@
 import argparse
 import random
 import sys
+import os
 
 from lib import write_grid
 
@@ -103,8 +104,15 @@ def write_image(grid, iteration, output_directory):
 
     Créer le dossier s'il n'existe pas.
     """
-    # À compléter par Yann
-    pass
+    os.makedirs(output_directory, exist_ok=True)
+    filename = f"{output_directory}/grid_{iteration:04d}.png"
+
+    # write_grid demande une image d'au moins 2 * taille + 1 pixels
+    size = 540
+    if 2 * len(grid) + 1 > size:
+        size = 2 * len(grid) + 1
+
+    write_grid(grid, filename, size)
 
 
 def main():
