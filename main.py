@@ -33,7 +33,14 @@ def parse_args():
     parser.add_argument("-p", "--periodic", action="store_true",
                         help="active les conditions aux limites périodiques")
 
-    return parser.parse_args()
+    args = parser.parse_args()
+
+    if args.nb_cells <= 0:
+        parser.error("--nb_cells doit être un entier strictement positif")
+    if args.max_iterations < 0:
+        parser.error("--max_iterations doit être un entier positif ou nul")
+
+    return args
 
 
 def random_grid(nb_cells, seed):
