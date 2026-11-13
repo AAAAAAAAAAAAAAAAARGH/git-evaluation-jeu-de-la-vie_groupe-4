@@ -36,7 +36,49 @@ cd git-evaluation-jeu-de-la-vie_groupe-4
 
 ## Exécution
 
-À compléter (Amour)
+markdown
+Toutes les commandes se lancent depuis la racine du dépôt.
+
+### Sans option (grille aléatoire, 21 images)
+
+$ python3 main.py
+Generation of 21 images in directory outputs
+
+
+### Grille de 50 cellules, graine 4200, 201 images
+
+$ python3 main.py -n 50 -m 200 -s 4200
+Generation of 201 images in directory outputs
+
+
+### Lire une grille sur l'entrée standard (bords fixes)
+
+$ cat tests/matrix3/input.txt | python3 main.py -m 1 -t text
+iteration: 1
+0 1 0
+0 0 1
+0 1 0
+
+
+### Même grille avec bords périodiques
+
+$ cat tests/matrix3/input.txt | python3 main.py -m 1 -p -t text
+iteration: 1
+0 0 0
+0 0 0
+0 0 0
+
+
+### Format d'une grille en entrée
+
+La première ligne contient la taille N, suivie de N lignes de N cellules (0 ou 1) séparées par des espaces :
+
+text
+3
+1 0 1
+0 0 1
+1 0 1
+
 
 ## Arguments
 
