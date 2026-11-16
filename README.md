@@ -104,7 +104,14 @@ Avec `-m N`, le programme calcule N + 1 générations (de 0 à N). En sortie `im
 
 ## Auteurs
 
-À compléter (Morgan)
+markdown
+| Nom | Prénom | Numéro étudiant |
+|---|---|---|
+| CADIL | Yann | 45002501 |
+| GRONDIN | Morgan | 45004032 |
+| HOAREAU | Hugo | 45006141 |
+| OKPEICHA | Kolawole Amour Dieudonne | 45005731 |
+| RAYBAUD | Marc | 45002016 |
 
 ## Liens utiles
 
