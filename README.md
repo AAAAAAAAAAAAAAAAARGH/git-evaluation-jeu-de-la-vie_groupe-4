@@ -36,7 +36,6 @@ cd git-evaluation-jeu-de-la-vie_groupe-4
 
 ## Exécution
 
-markdown
 Toutes les commandes se lancent depuis la racine du dépôt.
 
 ### Sans option (grille aléatoire, 21 images)
@@ -100,11 +99,14 @@ Avec `-m N`, le programme calcule N + 1 générations (de 0 à N). En sortie `im
 
 ## Intégration continue
 
-À compléter (Hugo)
+![Tests](https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4/actions/workflows/tests.yml/badge.svg)
 
+À chaque push et à chaque Pull Request, GitHub Actions lance automatiquement `sh check_script_options.sh` et `sh check_tests.sh` sur Ubuntu avec Python 3 (workflow `.github/workflows/tests.yml`). Si l'un des scripts échoue, le workflow est marqué en échec.
+
+Exécution réussie des deux scripts : [voir sur GitHub Actions]
+https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4/actions/runs/43838971050
 ## Auteurs
 
-markdown
 | Nom | Prénom | Numéro étudiant |
 |---|---|---|
 | CADIL | Yann | 45002501 |
