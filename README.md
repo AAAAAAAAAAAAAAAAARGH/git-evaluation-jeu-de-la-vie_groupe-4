@@ -40,44 +40,48 @@ Toutes les commandes se lancent depuis la racine du dépôt.
 
 ### Sans option (grille aléatoire, 21 images)
 
+```bash
 $ python3 main.py
 Generation of 21 images in directory outputs
-
+```
 
 ### Grille de 50 cellules, graine 4200, 201 images
 
+```bash
 $ python3 main.py -n 50 -m 200 -s 4200
 Generation of 201 images in directory outputs
-
+```
 
 ### Lire une grille sur l'entrée standard (bords fixes)
 
+```bash
 $ cat tests/matrix3/input.txt | python3 main.py -m 1 -t text
 iteration: 1
 0 1 0
 0 0 1
 0 1 0
-
+```
 
 ### Même grille avec bords périodiques
 
+```bash
 $ cat tests/matrix3/input.txt | python3 main.py -m 1 -p -t text
 iteration: 1
 0 0 0
 0 0 0
 0 0 0
-
+```
 
 ### Format d'une grille en entrée
 
 La première ligne contient la taille N, suivie de N lignes de N cellules (0 ou 1) séparées par des espaces :
 
-text
+```text
 3
 1 0 1
 0 0 1
 1 0 1
-
+```
 
 ## Arguments
 
@@ -95,7 +99,7 @@ Avec `-m N`, le programme calcule N + 1 générations (de 0 à N). En sortie `im
 
 ## Vidéos
 
-À compléter (Yann)
+_À compléter (Yann)_
 
 ## Intégration continue
 
@@ -103,8 +107,8 @@ Avec `-m N`, le programme calcule N + 1 générations (de 0 à N). En sortie `im
 
 À chaque push et à chaque Pull Request, GitHub Actions lance automatiquement `sh check_script_options.sh` et `sh check_tests.sh` sur Ubuntu avec Python 3 (workflow `.github/workflows/tests.yml`). Si l'un des scripts échoue, le workflow est marqué en échec.
 
-Exécution réussie des deux scripts : [voir sur GitHub Actions]
-https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4/actions/runs/43838971050
+Exécution réussie des deux scripts : [voir sur GitHub Actions](https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4/actions/runs/43838971050)
+
 ## Auteurs
 
 | Nom | Prénom | Numéro étudiant |
@@ -117,4 +121,4 @@ https://github.com/AAAAAAAAAAAAAAAAARGH/git-evaluation-jeu-de-la-vie_groupe-4/ac
 
 ## Liens utiles
 
-À compléter (Morgan)
+_À compléter (Morgan)_
