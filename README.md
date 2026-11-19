@@ -99,7 +99,27 @@ Avec `-m N`, le programme calcule N + 1 générations (de 0 à N). En sortie `im
 
 ## Vidéos
 
-_À compléter (Yann)_
+### Simulation du jeu de la vie
+
+[Voir la vidéo sur YouTube](https://youtube.com/shorts/mhkAEeBor88?feature=share)
+
+Grille aléatoire de 50 cellules par côté, **graine 4200**, bords fixes, 2001 générations (0 à 2000), 20 images par seconde.
+
+Commandes utilisées :
+
+```bash
+mkdir -p outputs/video-seed-4200
+python3 main.py --nb_cells 50 --max_iterations 2000 --seed 4200 \
+  --output_type image --output_directory outputs/video-seed-4200
+ffmpeg -y -framerate 20 -start_number 0 \
+  -i outputs/video-seed-4200/grid_%04d.png -frames:v 2001 \
+  -c:v libx264 -pix_fmt yuv420p -movflags +faststart \
+  outputs/video-seed-4200/game-of-life.mp4
+```
+
+### Historique du dépôt (Gource)
+
+_À compléter (Amour)_
 
 ## Intégration continue
 
