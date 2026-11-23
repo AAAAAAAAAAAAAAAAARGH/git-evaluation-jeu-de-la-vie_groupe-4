@@ -119,7 +119,9 @@ ffmpeg -y -framerate 20 -start_number 0 \
 
 ### Historique du dépôt (Gource)
 
-_À compléter (Amour)_
+[Voir la vidéo sur YouTube](https://youtu.be/FKeVBFjQaHg)
+
+Vidéo générée avec Gource à partir de l'historique de ce dépôt. Le fichier `.mailmap` regroupe les différents noms d'auteur de chaque membre.
 
 ## Intégration continue
 
